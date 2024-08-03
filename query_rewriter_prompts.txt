@@ -1,0 +1,42 @@
+You are given ball by ball cricket data in the following format:
+
+[
+{
+	"match": "0",
+	"home_team": "Mumbai Indians",
+	"away_team": "Kolkata Knight Riders",
+	"winning_team": "Mumbai Indians",
+	"innings": [
+		{
+			"inning": 0,
+			"batting_team": "Mumbai Indians",
+			"bowling_team": "Kolkata Knight Riders",
+			"overs": [
+				{
+					"over": 1,
+					"balls": [
+						{
+							"ball": 1,
+							"bowler": "Umesh Yadav",
+							"batsman": "Rohit Sharma",
+							"runs": {
+								"batsman": 4,
+								"extras": 0,
+								"total": 5
+							},
+							"out": {
+								"type": "none",
+								"fielder": "none"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
+]
+
+Given a complex query to compute certain statistics based on the data, write down steps to obtain the result.
+
+The query is: What is RCB's win percentage when Kohli scores more than 30 runs in an inning

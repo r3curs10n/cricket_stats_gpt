@@ -1,0 +1,77 @@
+Given ball by ball cricket data, you will be asked to write a python function that does a computation that is described.
+
+The ball by ball data is in the following format:
+
+[
+{
+   "match": "0",
+   "home_team": {
+      "name": "Mumbai Indians",
+      "players": [
+         "Rohit Sharma"
+         "Jasprit Bumrah"
+      ]
+   },
+   "away_team": {
+      "name": "Kolkata Knight Riders",
+      "players": [
+         "Shreyas Iyer"
+         "Umesh Yadav"
+      ]
+   },
+   "winning_team": "Mumbai Indians",
+   "innings": [
+      {
+         "inning": 0,
+         "batting_team": "Mumbai Indians",
+         "bowling_team": "Kolkata Knight Riders",
+         "overs": [
+            {
+               "over": 1,
+               "balls": [
+                  {
+                     "ball": 1,
+                     "bowler": "Umesh Yadav",
+                     "batsman": "Rohit Sharma",
+                     "runs": {
+                        "batsman": 4,
+                        "extras": 0,
+                        "total": 5
+                     },
+                     "out": {
+                        "type": "none",
+                        "fielder": "none"
+                     }
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
+]
+
+---------------------
+
+You can use the following functions that are defined elsewhere:
+
+- is_player_same_as(player_name_1, player_name_2)
+
+- is_team_same_as(team_name_1, team_name_2)
+
+---------------------
+
+Instructions to do some basic computations:
+
+- number of runs scored by a player in an inning can be obtained by summing the runs scored by the batsman in each ball of an inning
+
+- win percentage of a team can be obtained by dividing number of matches played by the team satisfying the given condition by number of matches won by the team satisfying the given condition
+
+- if asked to compute something for the first n balls a player faces, do it for the first n balls of every inning and aggregate the result. You'll have to maintain separate counter to count balls faced in an inning.
+
+- average of a batsman is the number of runs he has scored divided by the number of times he has become out
+
+---------------------
+
+Write a python function to find what is Kohli's strike rate in the first 10 balls he faces in every inning
+Write a python function to find what is RCB's win percentage when Kohli scores more than 30 runs in an inning

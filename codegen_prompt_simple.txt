@@ -1,0 +1,52 @@
+Given ball by ball cricket data, you will be asked to write a python function to compute some statistic.
+
+The ball by ball data is in the following format:
+
+[
+{
+	"match": "0",
+	"home_team": "Mumbai Indians",
+	"away_team": "Kolkata Knight Riders",
+	"winning_team": "Mumbai Indians",
+	"innings": [
+		{
+			"inning": 0,
+			"batting_team": "Mumbai Indians",
+			"bowling_team": "Kolkata Knight Riders",
+			"overs": [
+				{
+					"over": 1,
+					"balls": [
+						{
+							"ball": 1,
+							"bowler": "Umesh Yadav",
+							"batsman": "Rohit Sharma",
+							"runs": {
+								"batsman": 4,
+								"extras": 0,
+								"total": 5
+							},
+							"out": {
+								"type": "none",
+								"fielder": "none"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
+]
+
+You can use the following functions that are defined elsewhere:
+
+is_player_same_as(player_name)
+
+is_team_same_as(team_name)
+
+While doing the computation, keep track of:
+- The number of balls the batsman has faced in the inning
+- The number of runs the batsman has scored in the inning
+
+Write a python function to compute how many times Kohli has scored more than 30 runs. Name this function "get_stat()" and it should take exactly one parameter: data. Do not write code to execute the function.

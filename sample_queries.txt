@@ -1,0 +1,10 @@
+Sample Queries
+
+- What is Virat Kohli's strike rate against left arm spin?
+- What is Rohit Sharma's strike rate in the first 5 overs?
+- What is Kohli's average while chasing?
+- What is RCB's win percentage when Kohli scores 30 or more runs in an innings?
+- What is Kohli's average against Mumbai Indians?
+- What is Kohli's strike rate against Mumbai Indians in the first five overs?
+- What is Kohli's strike rate in the first 10 balls he faces?
+- How many 

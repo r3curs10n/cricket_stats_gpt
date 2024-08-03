@@ -1,0 +1,10 @@
+User query -> query re-writer -> code generator -> code executor -> response generator
+
+# query re-writer
+
+Query type:
+- Simple
+-- forward as is
+- Complex
+-- Break down into steps
+-- Re-write prompt

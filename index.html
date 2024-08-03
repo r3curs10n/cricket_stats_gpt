@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Search</title>
+    <!-- Include jQuery and jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Include your custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #search-container {
+            text-align: center;
+            margin: 50px auto;
+        }
+        #search-input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #search-button {
+            margin-left: 10px;
+        }
+        #search-results {
+            margin-top: 20px;
+        }
+        .sample-query-button {
+            margin: 10px;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="search-container">
+        <h1>Simple Search</h1>
+        <input type="text" id="search-input" placeholder="Enter your query">
+        <button id="search-button">Search</button>
+        <div id="search-results"></div>
+        <!-- Sample query buttons -->
+        <div>
+            <button class="sample-query-button" data-query="Apple">Apple</button>
+            <button class="sample-query-button" data-query="Banana">Banana</button>
+            <button class="sample-query-button" data-query="Cherry">Cherry</button>
+            <button class="sample-query-button" data-query="Date">Date</button>
+            <button class="sample-query-button" data-query="Grape">Grape</button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize the typeahead functionality
+        $(function() {
+            $("#search-input").autocomplete({
+                source: function(request, response) {
+                    // Replace this with your own logic to fetch query suggestions
+                    var query = request.term;
+                    // Simulated data for demonstration purposes
+                    var suggestions = ["Apple", "Banana", "Cherry", "Date", "Grape"];
+                    response($.ui.autocomplete.filter(suggestions, query));
+                },
+                minLength: 2, // Minimum characters to trigger typeahead
+                select: function(event, ui) {
+                    // Handle selection of a suggestion
+                    $("#search-input").val(ui.item.value);
+                    // You can perform further actions here
+                }
+            });
+
+            // Handle search button click
+            $("#search-button").click(function() {
+                var query = $("#search-input").val();
+                // Replace this with your own logic to perform the search
+                // Display the results in the #search-results div
+                $("#search-results").html("Search results for: " + query);
+            });
+
+            // Add click event handlers for sample query buttons
+            $(".sample-query-button").click(function() {
+                var sampleQuery = $(this).data("query");
+                $("#search-input").val(sampleQuery);
+            });
+        });
+    </script>
+</body>
+</html>
